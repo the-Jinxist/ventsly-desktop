@@ -8,13 +8,15 @@ Future<void> main() async {
   await windowManager.ensureInitialized();
 
   WindowOptions windowOptions = const WindowOptions(
-      size: Size(1200, 700),
-      center: true,
-      backgroundColor: Colors.white,
-      skipTaskbar: false,
-      windowButtonVisibility: true,
-      titleBarStyle: TitleBarStyle.hidden,
-      title: "Eventsly");
+    size: Size(1200, 700),
+    center: true,
+    backgroundColor: Colors.white,
+    skipTaskbar: false,
+    maximumSize: Size(800, 600),
+    windowButtonVisibility: true,
+    titleBarStyle: TitleBarStyle.hidden,
+    title: "Eventsly",
+  );
 
   windowManager.waitUntilReadyToShow(windowOptions, () async {
     await windowManager.show();
