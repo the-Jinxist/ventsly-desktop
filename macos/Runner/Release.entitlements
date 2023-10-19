@@ -4,5 +4,8 @@
 <dict>
 	<key>com.apple.security.app-sandbox</key>
 	<true/>
+	<!-- Added the key below for allowing network connection -->
+	<key>com.apple.security.network.client</key>
+	<true/>
 </dict>
 </plist>

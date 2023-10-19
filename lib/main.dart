@@ -1,4 +1,4 @@
-import 'package:eventsly_desktop/core/onboarding/screens/splash_screen.dart';
+import 'package:eventsly_desktop/config/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:window_manager/window_manager.dart';
@@ -32,7 +32,8 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
+      routerConfig: AppRouter.routes,
       debugShowCheckedModeBanner: false,
       title: 'Eventsly App',
       theme: ThemeData(
@@ -42,7 +43,6 @@ class MyApp extends StatelessWidget {
           Theme.of(context).textTheme,
         ),
       ),
-      home: const SplashScreen(),
     );
   }
 }

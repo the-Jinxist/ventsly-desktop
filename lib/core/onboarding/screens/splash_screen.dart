@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -17,16 +18,35 @@ class _SplashScreenState extends State<SplashScreen> {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text(
-              "Eventsly",
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontWeight: FontWeight.w600,
-                fontSize: 200,
-                color: Colors.amber,
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    context.push("/home");
+                  },
+                  child: const Text(
+                    "Eventsly",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      fontSize: 200,
+                      color: Colors.amber,
+                    ),
+                  ),
+                ),
+                const Text(
+                  ".",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontWeight: FontWeight.w600,
+                    fontSize: 200,
+                    color: Colors.black,
+                  ),
+                ),
+              ],
             ),
-            Text("Powered by Neo", style: GoogleFonts.roboto()),
+            Text("Powered by Neo", style: GoogleFonts.montserrat()),
           ],
         ),
       ),
