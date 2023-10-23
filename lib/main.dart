@@ -1,5 +1,6 @@
 import 'package:eventsly_desktop/config/routes.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:window_manager/window_manager.dart';
 
@@ -10,9 +11,10 @@ Future<void> main() async {
   WindowOptions windowOptions = const WindowOptions(
     size: Size(1200, 700),
     center: true,
-    backgroundColor: Colors.white,
+    backgroundColor: Colors.black,
     skipTaskbar: false,
-    maximumSize: Size(800, 600),
+    maximumSize: Size(1500, 1000),
+    minimumSize: Size(1200, 700),
     windowButtonVisibility: true,
     titleBarStyle: TitleBarStyle.hidden,
     title: "Eventsly",
@@ -32,17 +34,23 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      routerConfig: AppRouter.routes,
-      debugShowCheckedModeBanner: false,
-      title: 'Eventsly App',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-        textTheme: GoogleFonts.latoTextTheme(
-          Theme.of(context).textTheme,
-        ),
-      ),
+    return ScreenUtilInit(
+      designSize: const Size(1200, 700),
+      minTextAdapt: true,
+      builder: (context, child) {
+        return MaterialApp.router(
+          routerConfig: AppRouter.routes,
+          debugShowCheckedModeBanner: false,
+          title: 'Eventsly App',
+          theme: ThemeData(
+            colorScheme: ColorScheme.fromSeed(seedColor: Colors.amber),
+            useMaterial3: true,
+            textTheme: GoogleFonts.latoTextTheme(
+              Theme.of(context).textTheme,
+            ),
+          ),
+        );
+      },
     );
   }
 }

@@ -13,6 +13,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
       body: Center(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -31,7 +32,7 @@ class _SplashScreenState extends State<SplashScreen> {
                     style: TextStyle(
                       fontWeight: FontWeight.w600,
                       fontSize: 200,
-                      color: Colors.amber,
+                      color: Colors.white,
                     ),
                   ),
                 ),
@@ -41,12 +42,17 @@ class _SplashScreenState extends State<SplashScreen> {
                   style: TextStyle(
                     fontWeight: FontWeight.w600,
                     fontSize: 200,
-                    color: Colors.black,
+                    color: Colors.amber,
                   ),
                 ),
               ],
             ),
-            Text("Powered by Neo", style: GoogleFonts.montserrat()),
+            Text(
+              "Powered by Neo",
+              style: GoogleFonts.montserrat().copyWith(
+                color: Colors.amberAccent,
+              ),
+            ),
           ],
         ),
       ),
